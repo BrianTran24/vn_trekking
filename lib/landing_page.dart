@@ -7,6 +7,8 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.green.shade700,
+        foregroundColor: Colors.white,
         title: const Text('VN Trekking'),
         actions: [
           TextButton(
