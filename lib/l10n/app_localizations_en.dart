@@ -22,4 +22,56 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get welcomeMessage => 'Welcome to VN Trekking!';
+
+  @override
+  String get heroTitle => 'Explore Vietnam with VN Trekking';
+
+  @override
+  String get heroSubtitle =>
+      'Journey to conquer the heights and majestic natural beauty.';
+
+  @override
+  String get startNow => 'Start Now';
+
+  @override
+  String get whyChooseUs => 'Why Choose Us?';
+
+  @override
+  String get detailedMaps => 'Detailed Maps';
+
+  @override
+  String get detailedMapsDesc =>
+      'Providing path information and difficulty levels for each trail.';
+
+  @override
+  String get largeCommunity => 'Large Community';
+
+  @override
+  String get largeCommunityDesc =>
+      'Connecting with trekking enthusiasts across the country.';
+
+  @override
+  String get absoluteSafety => 'Absolute Safety';
+
+  @override
+  String get absoluteSafetyDesc => 'Professional guides and 24/7 support team.';
+
+  @override
+  String get aboutTitle => 'About VN Trekking';
+
+  @override
+  String get aboutDesc =>
+      'VN Trekking is the leading platform for trekking enthusiasts in Vietnam. We are committed to providing the best and safest experiences for our customers.';
+
+  @override
+  String get navHome => 'Home';
+
+  @override
+  String get navTrails => 'Trails';
+
+  @override
+  String get navAbout => 'About Us';
+
+  @override
+  String get joinNow => 'Join Now';
 }

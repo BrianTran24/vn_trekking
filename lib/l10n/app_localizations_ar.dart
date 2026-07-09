@@ -22,4 +22,56 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get welcomeMessage => 'مرحبًا بك في VN Trekking!';
+
+  @override
+  String get heroTitle => 'استكشف فيتنام مع VN Trekking';
+
+  @override
+  String get heroSubtitle => 'رحلة لغزو المرتفعات والجمال الطبيعي المهيب.';
+
+  @override
+  String get startNow => 'ابدأ الآن';
+
+  @override
+  String get whyChooseUs => 'لماذا تختارنا؟';
+
+  @override
+  String get detailedMaps => 'خرائط مفصلة';
+
+  @override
+  String get detailedMapsDesc =>
+      'توفير معلومات المسار ومستويات الصعوبة لكل درب.';
+
+  @override
+  String get largeCommunity => 'مجتمع كبير';
+
+  @override
+  String get largeCommunityDesc =>
+      'التواصل مع عشاق الرحلات في جميع أنحاء البلاد.';
+
+  @override
+  String get absoluteSafety => 'أمان مطلق';
+
+  @override
+  String get absoluteSafetyDesc =>
+      'مرشدون محترفون وفريق دعم على مدار الساعة طوال أيام الأسبوع.';
+
+  @override
+  String get aboutTitle => 'حول VN Trekking';
+
+  @override
+  String get aboutDesc =>
+      'VN Trekking هي المنصة الرائدة لعشاق الرحلات في فيتنام. نحن ملتزمون بتقديم أفضل التجارب وأكثرها أمانًا لعملائنا.';
+
+  @override
+  String get navHome => 'الرئيسية';
+
+  @override
+  String get navTrails => 'المسارات';
+
+  @override
+  String get navAbout => 'من نحن';
+
+  @override
+  String get joinNow => 'انضم الآن';
 }

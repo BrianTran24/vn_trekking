@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../l10n/app_localizations.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -34,9 +35,9 @@ class LandingPage extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const Text(
-            'Khám phá Việt Nam cùng VN Trekking',
-            style: TextStyle(
+          Text(
+            AppLocalizations.of(context)!.heroTitle,
+            style: const TextStyle(
               fontSize: 36,
               fontWeight: FontWeight.bold,
               color: Colors.white,
@@ -44,9 +45,9 @@ class LandingPage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 20),
-          const Text(
-            'Hành trình chinh phục những đỉnh cao và vẻ đẹp thiên nhiên hùng vĩ.',
-            style: TextStyle(
+          Text(
+            AppLocalizations.of(context)!.heroSubtitle,
+            style: const TextStyle(
               fontSize: 18,
               color: Colors.white70,
             ),
@@ -61,7 +62,7 @@ class LandingPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
               textStyle: const TextStyle(fontSize: 18),
             ),
-            child: const Text('Bắt đầu ngay'),
+            child: Text(AppLocalizations.of(context)!.startNow),
           ),
         ],
       ),
@@ -69,13 +70,14 @@ class LandingPage extends StatelessWidget {
   }
 
   Widget _buildFeaturesSection(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 20),
       child: Column(
         children: [
-          const Text(
-            'Tại sao chọn chúng tôi?',
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+          Text(
+            l10n.whyChooseUs,
+            style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 40),
           Wrap(
@@ -89,19 +91,19 @@ class LandingPage extends StatelessWidget {
                 },
                 child: _buildFeatureCard(
                   icon: Icons.map,
-                  title: 'Bản đồ chi tiết',
-                  description: 'Cung cấp thông tin đường đi và độ khó của từng cung đường.',
+                  title: l10n.detailedMaps,
+                  description: l10n.detailedMapsDesc,
                 ),
               ),
               _buildFeatureCard(
                 icon: Icons.people,
-                title: 'Cộng đồng lớn',
-                description: 'Kết nối với những người đam mê trekking trên khắp cả nước.',
+                title: l10n.largeCommunity,
+                description: l10n.largeCommunityDesc,
               ),
               _buildFeatureCard(
                 icon: Icons.security,
-                title: 'An toàn tuyệt đối',
-                description: 'Hướng dẫn viên chuyên nghiệp và đội ngũ hỗ trợ 24/7.',
+                title: l10n.absoluteSafety,
+                description: l10n.absoluteSafetyDesc,
               ),
             ],
           ),
@@ -132,20 +134,20 @@ class LandingPage extends StatelessWidget {
   }
 
   Widget _buildAboutSection(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 20),
       color: Colors.grey.shade100,
       child: Column(
         children: [
-          const Text(
-            'Về VN Trekking',
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+          Text(
+            l10n.aboutTitle,
+            style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 20),
-          const Text(
-            'VN Trekking là nền tảng hàng đầu dành cho những người yêu thích trekking tại Việt Nam. '
-            'Chúng tôi cam kết mang đến những trải nghiệm tuyệt vời và an toàn nhất cho khách hàng.',
-            style: TextStyle(fontSize: 16),
+          Text(
+            l10n.aboutDesc,
+            style: const TextStyle(fontSize: 16),
             textAlign: TextAlign.center,
           ),
         ],

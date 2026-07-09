@@ -22,4 +22,57 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get welcomeMessage => '¡Bienvenido a VN Trekking!';
+
+  @override
+  String get heroTitle => 'Explora Vietnam con VN Trekking';
+
+  @override
+  String get heroSubtitle =>
+      'Un viaje para conquistar las alturas y la majestuosa belleza natural.';
+
+  @override
+  String get startNow => 'Empezar ahora';
+
+  @override
+  String get whyChooseUs => '¿Por qué elegirnos?';
+
+  @override
+  String get detailedMaps => 'Mapas detallados';
+
+  @override
+  String get detailedMapsDesc =>
+      'Proporcionando información de rutas y niveles de dificultad para cada sendero.';
+
+  @override
+  String get largeCommunity => 'Gran comunidad';
+
+  @override
+  String get largeCommunityDesc =>
+      'Conectando con entusiastas del trekking en todo el país.';
+
+  @override
+  String get absoluteSafety => 'Seguridad absoluta';
+
+  @override
+  String get absoluteSafetyDesc =>
+      'Guías profesionales y equipo de soporte 24/7.';
+
+  @override
+  String get aboutTitle => 'Sobre VN Trekking';
+
+  @override
+  String get aboutDesc =>
+      'VN Trekking es la plataforma líder para los entusiastas del trekking en Vietnam. Estamos comprometidos a brindar las mejores y más seguras experiencias para nuestros clientes.';
+
+  @override
+  String get navHome => 'Inicio';
+
+  @override
+  String get navTrails => 'Senderos';
+
+  @override
+  String get navAbout => 'Sobre nosotros';
+
+  @override
+  String get joinNow => 'Únete ahora';
 }

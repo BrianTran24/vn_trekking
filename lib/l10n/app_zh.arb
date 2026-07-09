@@ -4,5 +4,21 @@
   "loginWithGoogle": "使用 Google 登录",
   "loginWithFacebook": "使用 Facebook 登录",
   "loginWithApple": "使用 Apple 登录",
-  "welcomeMessage": "欢迎来到 VN Trekking！"
+  "welcomeMessage": "欢迎来到 VN Trekking！",
+  "heroTitle": "与 VN Trekking 一起探索越南",
+  "heroSubtitle": "征服高度与壮丽自然美景的旅程。",
+  "startNow": "立即开始",
+  "whyChooseUs": "为什么选择我们？",
+  "detailedMaps": "详细地图",
+  "detailedMapsDesc": "提供每条路线的路径信息和难度等级。",
+  "largeCommunity": "庞大社区",
+  "largeCommunityDesc": "与全国各地的徒步爱好者联系。",
+  "absoluteSafety": "绝对安全",
+  "absoluteSafetyDesc": "专业导游和 24/7 支持团队。",
+  "aboutTitle": "关于 VN Trekking",
+  "aboutDesc": "VN Trekking 是越南领先的徒步爱好者平台。我们致力于为客户提供最佳和最安全的体验。",
+  "navHome": "首页",
+  "navTrails": "路线",
+  "navAbout": "关于我们",
+  "joinNow": "立即加入"
 }

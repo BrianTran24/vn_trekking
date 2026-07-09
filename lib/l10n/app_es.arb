@@ -4,5 +4,21 @@
   "loginWithGoogle": "Iniciar sesión con Google",
   "loginWithFacebook": "Iniciar sesión con Facebook",
   "loginWithApple": "Iniciar sesión con Apple",
-  "welcomeMessage": "¡Bienvenido a VN Trekking!"
+  "welcomeMessage": "¡Bienvenido a VN Trekking!",
+  "heroTitle": "Explora Vietnam con VN Trekking",
+  "heroSubtitle": "Un viaje para conquistar las alturas y la majestuosa belleza natural.",
+  "startNow": "Empezar ahora",
+  "whyChooseUs": "¿Por qué elegirnos?",
+  "detailedMaps": "Mapas detallados",
+  "detailedMapsDesc": "Proporcionando información de rutas y niveles de dificultad para cada sendero.",
+  "largeCommunity": "Gran comunidad",
+  "largeCommunityDesc": "Conectando con entusiastas del trekking en todo el país.",
+  "absoluteSafety": "Seguridad absoluta",
+  "absoluteSafetyDesc": "Guías profesionales y equipo de soporte 24/7.",
+  "aboutTitle": "Sobre VN Trekking",
+  "aboutDesc": "VN Trekking es la plataforma líder para los entusiastas del trekking en Vietnam. Estamos comprometidos a brindar las mejores y más seguras experiencias para nuestros clientes.",
+  "navHome": "Inicio",
+  "navTrails": "Senderos",
+  "navAbout": "Sobre nosotros",
+  "joinNow": "Únete ahora"
 }

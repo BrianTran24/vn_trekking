@@ -4,5 +4,21 @@
   "loginWithGoogle": "تسجيل الدخول باستخدام Google",
   "loginWithFacebook": "تسجيل الدخول باستخدام Facebook",
   "loginWithApple": "تسجيل الدخول باستخدام Apple",
-  "welcomeMessage": "مرحبًا بك في VN Trekking!"
+  "welcomeMessage": "مرحبًا بك في VN Trekking!",
+  "heroTitle": "استكشف فيتنام مع VN Trekking",
+  "heroSubtitle": "رحلة لغزو المرتفعات والجمال الطبيعي المهيب.",
+  "startNow": "ابدأ الآن",
+  "whyChooseUs": "لماذا تختارنا؟",
+  "detailedMaps": "خرائط مفصلة",
+  "detailedMapsDesc": "توفير معلومات المسار ومستويات الصعوبة لكل درب.",
+  "largeCommunity": "مجتمع كبير",
+  "largeCommunityDesc": "التواصل مع عشاق الرحلات في جميع أنحاء البلاد.",
+  "absoluteSafety": "أمان مطلق",
+  "absoluteSafetyDesc": "مرشدون محترفون وفريق دعم على مدار الساعة طوال أيام الأسبوع.",
+  "aboutTitle": "حول VN Trekking",
+  "aboutDesc": "VN Trekking هي المنصة الرائدة لعشاق الرحلات في فيتنام. نحن ملتزمون بتقديم أفضل التجارب وأكثرها أمانًا لعملائنا.",
+  "navHome": "الرئيسية",
+  "navTrails": "المسارات",
+  "navAbout": "من نحن",
+  "joinNow": "انضم الآن"
 }

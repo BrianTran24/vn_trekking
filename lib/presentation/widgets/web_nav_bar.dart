@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../l10n/app_localizations.dart';
+import 'language_switcher.dart';
 
 class WebNavBar extends StatelessWidget {
   const WebNavBar({super.key});
@@ -43,19 +45,21 @@ class WebNavBar extends StatelessWidget {
           const Spacer(),
           // Menu Items
           _NavBarItem(
-            title: 'Trang chủ',
+            title: AppLocalizations.of(context)!.navHome,
             onTap: () => context.go('/'),
             isActive: GoRouterState.of(context).matchedLocation == '/',
           ),
           _NavBarItem(
-            title: 'Cung đường',
+            title: AppLocalizations.of(context)!.navTrails,
             onTap: () => context.go('/trails'),
             isActive: GoRouterState.of(context).matchedLocation == '/trails',
           ),
           _NavBarItem(
-            title: 'Về chúng tôi',
+            title: AppLocalizations.of(context)!.navAbout,
             onTap: () {},
           ),
+          const SizedBox(width: 20),
+          const LanguageSwitcher(),
           const SizedBox(width: 20),
           ElevatedButton(
             onPressed: () => context.go('/login'),
@@ -67,7 +71,7 @@ class WebNavBar extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
               ),
             ),
-            child: const Text('Tham gia ngay'),
+            child: Text(AppLocalizations.of(context)!.joinNow),
           ),
         ],
       ),

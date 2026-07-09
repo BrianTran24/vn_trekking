@@ -4,5 +4,21 @@
   "loginWithGoogle": "Đăng nhập với Google",
   "loginWithFacebook": "Đăng nhập với Facebook",
   "loginWithApple": "Đăng nhập với Apple",
-  "welcomeMessage": "Chào mừng bạn đến với VN Trekking!"
+  "welcomeMessage": "Chào mừng bạn đến với VN Trekking!",
+  "heroTitle": "Khám phá Việt Nam cùng VN Trekking",
+  "heroSubtitle": "Hành trình chinh phục những đỉnh cao và vẻ đẹp thiên nhiên hùng vĩ.",
+  "startNow": "Bắt đầu ngay",
+  "whyChooseUs": "Tại sao chọn chúng tôi?",
+  "detailedMaps": "Bản đồ chi tiết",
+  "detailedMapsDesc": "Cung cấp thông tin đường đi và độ khó của từng cung đường.",
+  "largeCommunity": "Cộng đồng lớn",
+  "largeCommunityDesc": "Kết nối với những người đam mê trekking trên khắp cả nước.",
+  "absoluteSafety": "An toàn tuyệt đối",
+  "absoluteSafetyDesc": "Hướng dẫn viên chuyên nghiệp và đội ngũ hỗ trợ 24/7.",
+  "aboutTitle": "Về VN Trekking",
+  "aboutDesc": "VN Trekking là nền tảng hàng đầu dành cho những người yêu thích trekking tại Việt Nam. Chúng tôi cam kết mang đến những trải nghiệm tuyệt vời và an toàn nhất cho khách hàng.",
+  "navHome": "Trang chủ",
+  "navTrails": "Cung đường",
+  "navAbout": "Về chúng tôi",
+  "joinNow": "Tham gia ngay"
 }

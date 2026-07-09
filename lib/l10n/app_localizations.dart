@@ -137,6 +137,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Welcome to VN Trekking!'**
   String get welcomeMessage;
+
+  /// No description provided for @heroTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore Vietnam with VN Trekking'**
+  String get heroTitle;
+
+  /// No description provided for @heroSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Journey to conquer the heights and majestic natural beauty.'**
+  String get heroSubtitle;
+
+  /// No description provided for @startNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Now'**
+  String get startNow;
+
+  /// No description provided for @whyChooseUs.
+  ///
+  /// In en, this message translates to:
+  /// **'Why Choose Us?'**
+  String get whyChooseUs;
+
+  /// No description provided for @detailedMaps.
+  ///
+  /// In en, this message translates to:
+  /// **'Detailed Maps'**
+  String get detailedMaps;
+
+  /// No description provided for @detailedMapsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Providing path information and difficulty levels for each trail.'**
+  String get detailedMapsDesc;
+
+  /// No description provided for @largeCommunity.
+  ///
+  /// In en, this message translates to:
+  /// **'Large Community'**
+  String get largeCommunity;
+
+  /// No description provided for @largeCommunityDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Connecting with trekking enthusiasts across the country.'**
+  String get largeCommunityDesc;
+
+  /// No description provided for @absoluteSafety.
+  ///
+  /// In en, this message translates to:
+  /// **'Absolute Safety'**
+  String get absoluteSafety;
+
+  /// No description provided for @absoluteSafetyDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Professional guides and 24/7 support team.'**
+  String get absoluteSafetyDesc;
+
+  /// No description provided for @aboutTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'About VN Trekking'**
+  String get aboutTitle;
+
+  /// No description provided for @aboutDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'VN Trekking is the leading platform for trekking enthusiasts in Vietnam. We are committed to providing the best and safest experiences for our customers.'**
+  String get aboutDesc;
+
+  /// No description provided for @navHome.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get navHome;
+
+  /// No description provided for @navTrails.
+  ///
+  /// In en, this message translates to:
+  /// **'Trails'**
+  String get navTrails;
+
+  /// No description provided for @navAbout.
+  ///
+  /// In en, this message translates to:
+  /// **'About Us'**
+  String get navAbout;
+
+  /// No description provided for @joinNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Join Now'**
+  String get joinNow;
 }
 
 class _AppLocalizationsDelegate

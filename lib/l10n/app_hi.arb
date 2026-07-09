@@ -4,5 +4,21 @@
   "loginWithGoogle": "Google के साथ लॉगिन करें",
   "loginWithFacebook": "Facebook के साथ लॉगिन करें",
   "loginWithApple": "Apple के साथ लॉगिन करें",
-  "welcomeMessage": "VN Trekking में आपका स्वागत है!"
+  "welcomeMessage": "VN Trekking में आपका स्वागत है!",
+  "heroTitle": "VN Trekking के साथ वियतनाम की खोज करें",
+  "heroSubtitle": "ऊंचाइयों और राजसी प्राकृतिक सुंदरता को जीतने की यात्रा।",
+  "startNow": "अभी शुरू करें",
+  "whyChooseUs": "हमें क्यों चुनें?",
+  "detailedMaps": "विस्तृत मानचित्र",
+  "detailedMapsDesc": "प्रत्येक पथ के लिए पथ की जानकारी और कठिनाई स्तर प्रदान करना।",
+  "largeCommunity": "बड़ा समुदाय",
+  "largeCommunityDesc": "देश भर के ट्रेकिंग उत्साही लोगों के साथ जुड़ना।",
+  "absoluteSafety": "पूर्ण सुरक्षा",
+  "absoluteSafetyDesc": "पेशेवर गाइड और 24/7 सहायता टीम।",
+  "aboutTitle": "VN Trekking के बारे में",
+  "aboutDesc": "VN Trekking वियतनाम में ट्रेकिंग उत्साही लोगों के लिए अग्रणी मंच है। हम अपने ग्राहकों के लिए सर्वोत्तम और सुरक्षित अनुभव प्रदान करने के लिए प्रतिबद्ध हैं।",
+  "navHome": "होम",
+  "navTrails": "ट्रेल",
+  "navAbout": "हमारे बारे में",
+  "joinNow": "अभी शामिल हों"
 }
