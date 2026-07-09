@@ -1,0 +1,23 @@
+{
+  "@@locale": "en",
+  "appTitle": "VN Trekking",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "loginWithGoogle": "Login with Google",
+  "@loginWithGoogle": {
+    "description": "Label for Google login button"
+  },
+  "loginWithFacebook": "Login with Facebook",
+  "@loginWithFacebook": {
+    "description": "Label for Facebook login button"
+  },
+  "loginWithApple": "Login with Apple",
+  "@loginWithApple": {
+    "description": "Label for Apple login button"
+  },
+  "welcomeMessage": "Welcome to VN Trekking!",
+  "@welcomeMessage": {
+    "description": "A welcome message shown on the home screen"
+  }
+}

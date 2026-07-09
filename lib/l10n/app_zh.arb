@@ -1,0 +1,8 @@
+{
+  "@@locale": "zh",
+  "appTitle": "VN Trekking",
+  "loginWithGoogle": "使用 Google 登录",
+  "loginWithFacebook": "使用 Facebook 登录",
+  "loginWithApple": "使用 Apple 登录",
+  "welcomeMessage": "欢迎来到 VN Trekking！"
+}

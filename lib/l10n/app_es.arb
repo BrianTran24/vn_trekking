@@ -1,0 +1,8 @@
+{
+  "@@locale": "es",
+  "appTitle": "VN Trekking",
+  "loginWithGoogle": "Iniciar sesión con Google",
+  "loginWithFacebook": "Iniciar sesión con Facebook",
+  "loginWithApple": "Iniciar sesión con Apple",
+  "welcomeMessage": "¡Bienvenido a VN Trekking!"
+}
