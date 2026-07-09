@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
@@ -6,29 +7,6 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.green.shade700,
-        foregroundColor: Colors.white,
-        title: const Text('VN Trekking'),
-        actions: [
-          TextButton(
-            onPressed: () {},
-            child: const Text('Home', style: TextStyle(color: Colors.white)),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text('Trails', style: TextStyle(color: Colors.white)),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text('About', style: TextStyle(color: Colors.white)),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: const Text('Contact', style: TextStyle(color: Colors.white)),
-          ),
-        ],
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -76,7 +54,9 @@ class LandingPage extends StatelessWidget {
           ),
           const SizedBox(height: 40),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              context.push('/trails');
+            },
             style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
               textStyle: const TextStyle(fontSize: 18),
@@ -103,10 +83,15 @@ class LandingPage extends StatelessWidget {
             runSpacing: 20,
             alignment: WrapAlignment.center,
             children: [
-              _buildFeatureCard(
-                icon: Icons.map,
-                title: 'Bản đồ chi tiết',
-                description: 'Cung cấp thông tin đường đi và độ khó của từng cung đường.',
+              InkWell(
+                onTap: () {
+                  context.push('/trails');
+                },
+                child: _buildFeatureCard(
+                  icon: Icons.map,
+                  title: 'Bản đồ chi tiết',
+                  description: 'Cung cấp thông tin đường đi và độ khó của từng cung đường.',
+                ),
               ),
               _buildFeatureCard(
                 icon: Icons.people,
