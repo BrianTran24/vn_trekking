@@ -32,6 +32,7 @@ class TrailsView extends StatefulWidget {
 class _TrailsViewState extends State<TrailsView> {
   final MapController _mapController = MapController();
   bool _isExpanded = true;
+  bool _showLocationMarker = false;
   static const double _panelWidth = 400.0;
   static const double _collapsedOffset = -350.0; // Keep 50px visible for the toggle button
 
@@ -77,6 +78,10 @@ class _TrailsViewState extends State<TrailsView> {
 
     // When we reach here, permissions are granted and we can
     // continue accessing the position of the device.
+    setState(() {
+      _showLocationMarker = true;
+    });
+
     try {
       final position = await Geolocator.getCurrentPosition();
       _mapController.move(
@@ -113,7 +118,17 @@ class _TrailsViewState extends State<TrailsView> {
                 urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                 userAgentPackageName: 'com.example.vn_trekking',
               ),
-              CurrentLocationLayer(),
+              if (_showLocationMarker)
+                CurrentLocationLayer(
+                  positionStream: const LocationMarkerDataStreamFactory()
+                      .fromGeolocatorPositionStream(
+                    stream: const LocationMarkerDataStreamFactory()
+                        .defaultPositionStreamSource(
+                      requestPermissionCallback: () async =>
+                          LocationPermission.whileInUse,
+                    ),
+                  ),
+                ),
               BlocBuilder<TrekkingBloc, TrekkingState>(
                 builder: (context, state) {
                   if (state is TrekkingLoaded) {
