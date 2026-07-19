@@ -43,7 +43,8 @@ class _TrailsViewState extends State<TrailsView> {
               initialCenter: LatLng(22.3364, 103.8438), // Sa Pa, Vietnam
               initialZoom: 13.0,
               interactionOptions: InteractionOptions(
-                flags: InteractiveFlag.all,
+                flags: InteractiveFlag.all & ~InteractiveFlag.scrollWheelZoom,
+                pinchZoomWinGestures: MultiFingerGesture.pinchZoom | MultiFingerGesture.pinchMove,
               ),
             ),
             children: [
