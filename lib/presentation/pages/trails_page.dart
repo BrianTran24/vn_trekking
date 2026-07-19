@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 import '../../application/trekking_bloc.dart';
 import '../../domain/trekking_location.dart';
 import '../../infrastructure/mock_trekking_repository.dart';
@@ -28,9 +30,67 @@ class TrailsView extends StatefulWidget {
 }
 
 class _TrailsViewState extends State<TrailsView> {
+  final MapController _mapController = MapController();
   bool _isExpanded = true;
   static const double _panelWidth = 400.0;
   static const double _collapsedOffset = -350.0; // Keep 50px visible for the toggle button
+
+  Future<void> _handleMyLocation() async {
+    bool serviceEnabled;
+    LocationPermission permission;
+
+    // Test if location services are enabled.
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Location services are disabled.')),
+        );
+      }
+      return;
+    }
+
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Location permissions are denied.')),
+          );
+        }
+        return;
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text(
+                'Location permissions are permanently denied, we cannot request permissions.'),
+          ),
+        );
+      }
+      return;
+    }
+
+    // When we reach here, permissions are granted and we can
+    // continue accessing the position of the device.
+    try {
+      final position = await Geolocator.getCurrentPosition();
+      _mapController.move(
+        LatLng(position.latitude, position.longitude),
+        15.0,
+      );
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error getting location: $e')),
+        );
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +99,7 @@ class _TrailsViewState extends State<TrailsView> {
         children: [
           // The Map Layer
           FlutterMap(
+            mapController: _mapController,
             options: const MapOptions(
               initialCenter: LatLng(22.3364, 103.8438), // Sa Pa, Vietnam
               initialZoom: 13.0,
@@ -52,6 +113,7 @@ class _TrailsViewState extends State<TrailsView> {
                 urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                 userAgentPackageName: 'com.example.vn_trekking',
               ),
+              CurrentLocationLayer(),
               BlocBuilder<TrekkingBloc, TrekkingState>(
                 builder: (context, state) {
                   if (state is TrekkingLoaded) {
@@ -74,6 +136,45 @@ class _TrailsViewState extends State<TrailsView> {
                 },
               ),
             ],
+          ),
+
+          // Zoom Controls (Bottom Right)
+          Positioned(
+            right: 20,
+            bottom: 20,
+            child: Column(
+              children: [
+                FloatingActionButton(
+                  mini: true,
+                  heroTag: 'zoom_in',
+                  backgroundColor: Colors.white.withAlpha((0.9 * 255).toInt()),
+                  child: Icon(Icons.add, color: Colors.green[800]),
+                  onPressed: () {
+                    final currentZoom = _mapController.camera.zoom;
+                    _mapController.move(_mapController.camera.center, currentZoom + 1);
+                  },
+                ),
+                const SizedBox(height: 10),
+                FloatingActionButton(
+                  mini: true,
+                  heroTag: 'zoom_out',
+                  backgroundColor: Colors.white.withAlpha((0.9 * 255).toInt()),
+                  child: Icon(Icons.remove, color: Colors.green[800]),
+                  onPressed: () {
+                    final currentZoom = _mapController.camera.zoom;
+                    _mapController.move(_mapController.camera.center, currentZoom - 1);
+                  },
+                ),
+                const SizedBox(height: 10),
+                FloatingActionButton(
+                  mini: true,
+                  heroTag: 'my_location',
+                  backgroundColor: Colors.white.withAlpha((0.9 * 255).toInt()),
+                  onPressed: _handleMyLocation,
+                  child: Icon(Icons.my_location, color: Colors.green[800]),
+                ),
+              ],
+            ),
           ),
 
           // Location List Overlay (Left side)
