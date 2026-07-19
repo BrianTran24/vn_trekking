@@ -75,4 +75,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get joinNow => 'Rejoindre maintenant';
+
+  @override
+  String get downloadAppStore => 'Download on the App Store';
+
+  @override
+  String get downloadPlayStore => 'Get it on Google Play';
 }

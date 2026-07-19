@@ -75,4 +75,10 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get joinNow => 'Tham gia ngay';
+
+  @override
+  String get downloadAppStore => 'Tải trên App Store';
+
+  @override
+  String get downloadPlayStore => 'Tải trên Google Play';
 }

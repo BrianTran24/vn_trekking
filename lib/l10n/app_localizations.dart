@@ -233,6 +233,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Join Now'**
   String get joinNow;
+
+  /// No description provided for @downloadAppStore.
+  ///
+  /// In en, this message translates to:
+  /// **'Download on the App Store'**
+  String get downloadAppStore;
+
+  /// No description provided for @downloadPlayStore.
+  ///
+  /// In en, this message translates to:
+  /// **'Get it on Google Play'**
+  String get downloadPlayStore;
 }
 
 class _AppLocalizationsDelegate

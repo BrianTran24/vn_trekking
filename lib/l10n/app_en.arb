@@ -35,5 +35,7 @@
   "navHome": "Home",
   "navTrails": "Trails",
   "navAbout": "About Us",
-  "joinNow": "Join Now"
+  "joinNow": "Join Now",
+  "downloadAppStore": "Download on the App Store",
+  "downloadPlayStore": "Get it on Google Play"
 }

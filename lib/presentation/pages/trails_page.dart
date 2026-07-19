@@ -20,8 +20,17 @@ class TrailsPage extends StatelessWidget {
   }
 }
 
-class TrailsView extends StatelessWidget {
+class TrailsView extends StatefulWidget {
   const TrailsView({super.key});
+
+  @override
+  State<TrailsView> createState() => _TrailsViewState();
+}
+
+class _TrailsViewState extends State<TrailsView> {
+  bool _isExpanded = true;
+  static const double _panelWidth = 400.0;
+  static const double _collapsedOffset = -350.0; // Keep 50px visible for the toggle button
 
   @override
   Widget build(BuildContext context) {
@@ -67,14 +76,16 @@ class TrailsView extends StatelessWidget {
           ),
 
           // Location List Overlay (Left side)
-          Positioned(
-            left: 20,
+          AnimatedPositioned(
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeInOut,
+            left: _isExpanded ? 20 : _collapsedOffset,
             top: 20,
             bottom: 20,
-            width: 400,
+            width: _panelWidth,
             child: Container(
               decoration: BoxDecoration(
-                color: Colors.white.withAlpha((0.9 * 255).toInt()),
+                color: Colors.white.withAlpha((0.95 * 255).toInt()),
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
                   BoxShadow(
@@ -88,37 +99,65 @@ class TrailsView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Text(
-                      'Trekking Locations',
-                      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                            fontWeight: FontWeight.bold,
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Opacity(
+                            opacity: _isExpanded ? 1.0 : 0.0,
+                            child: Text(
+                              'Trekking Locations',
+                              overflow: TextOverflow.ellipsis,
+                              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.green[800],
+                                  ),
+                            ),
+                          ),
+                        ),
+                        IconButton(
+                          icon: Icon(
+                            _isExpanded ? Icons.chevron_left : Icons.chevron_right,
                             color: Colors.green[800],
                           ),
+                          onPressed: () {
+                            setState(() {
+                              _isExpanded = !_isExpanded;
+                            });
+                          },
+                        ),
+                      ],
                     ),
                   ),
                   const Divider(height: 1),
                   Expanded(
-                    child: BlocBuilder<TrekkingBloc, TrekkingState>(
-                      builder: (context, state) {
-                        if (state is TrekkingLoading) {
-                          return const Center(child: CircularProgressIndicator());
-                        } else if (state is TrekkingLoaded) {
-                          return ListView.separated(
-                            padding: const EdgeInsets.all(10),
-                            itemCount: state.locations.length,
-                            separatorBuilder: (context, index) =>
-                                const SizedBox(height: 10),
-                            itemBuilder: (context, index) {
-                              final location = state.locations[index];
-                              return LocationCard(location: location);
-                            },
-                          );
-                        } else if (state is TrekkingError) {
-                          return Center(child: Text(state.message));
-                        }
-                        return const SizedBox.shrink();
-                      },
+                    child: Opacity(
+                      opacity: _isExpanded ? 1.0 : 0.0,
+                      child: IgnorePointer(
+                        ignoring: !_isExpanded,
+                        child: BlocBuilder<TrekkingBloc, TrekkingState>(
+                          builder: (context, state) {
+                            if (state is TrekkingLoading) {
+                              return const Center(child: CircularProgressIndicator());
+                            } else if (state is TrekkingLoaded) {
+                              return ListView.separated(
+                                padding: const EdgeInsets.all(10),
+                                itemCount: state.locations.length,
+                                separatorBuilder: (context, index) =>
+                                    const SizedBox(height: 10),
+                                itemBuilder: (context, index) {
+                                  final location = state.locations[index];
+                                  return LocationCard(location: location);
+                                },
+                              );
+                            } else if (state is TrekkingError) {
+                              return Center(child: Text(state.message));
+                            }
+                            return const SizedBox.shrink();
+                          },
+                        ),
+                      ),
                     ),
                   ),
                 ],

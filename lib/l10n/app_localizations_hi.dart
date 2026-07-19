@@ -74,4 +74,10 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get joinNow => 'अभी शामिल हों';
+
+  @override
+  String get downloadAppStore => 'Download on the App Store';
+
+  @override
+  String get downloadPlayStore => 'Get it on Google Play';
 }

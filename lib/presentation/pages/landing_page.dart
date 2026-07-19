@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../l10n/app_localizations.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
+
+  static const String appStoreUrl = 'https://apps.apple.com/us/app/go-baden/id6759437997';
+  static const String playStoreUrl = 'https://play.google.com/store/apps/details?id=com.idearspark.gpx_trekker';
+
+  Future<void> _launchURL(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (!await launchUrl(uri)) {
+      debugPrint('Could not launch $url');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +75,45 @@ class LandingPage extends StatelessWidget {
             ),
             child: Text(AppLocalizations.of(context)!.startNow),
           ),
+          const SizedBox(height: 30),
+          Wrap(
+            spacing: 20,
+            runSpacing: 10,
+            alignment: WrapAlignment.center,
+            children: [
+              _buildStoreButton(
+                onPressed: () => _launchURL(appStoreUrl),
+                icon: Icons.apple,
+                label: AppLocalizations.of(context)!.downloadAppStore,
+              ),
+              _buildStoreButton(
+                onPressed: () => _launchURL(playStoreUrl),
+                icon: Icons.play_arrow,
+                label: AppLocalizations.of(context)!.downloadPlayStore,
+              ),
+            ],
+          ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildStoreButton({
+    required VoidCallback onPressed,
+    required IconData icon,
+    required String label,
+  }) {
+    return OutlinedButton.icon(
+      onPressed: onPressed,
+      icon: Icon(icon, color: Colors.white),
+      label: Text(label),
+      style: OutlinedButton.styleFrom(
+        foregroundColor: Colors.white,
+        side: const BorderSide(color: Colors.white, width: 2),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+        ),
       ),
     );
   }
@@ -173,6 +222,23 @@ class LandingPage extends StatelessWidget {
               IconButton(onPressed: () {}, icon: const Icon(Icons.facebook, color: Colors.white70)),
               IconButton(onPressed: () {}, icon: const Icon(Icons.camera_alt, color: Colors.white70)),
               IconButton(onPressed: () {}, icon: const Icon(Icons.email, color: Colors.white70)),
+            ],
+          ),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton.icon(
+                onPressed: () => _launchURL(appStoreUrl),
+                icon: const Icon(Icons.apple, color: Colors.white70),
+                label: const Text('App Store', style: TextStyle(color: Colors.white70)),
+              ),
+              const SizedBox(width: 20),
+              TextButton.icon(
+                onPressed: () => _launchURL(playStoreUrl),
+                icon: const Icon(Icons.play_arrow, color: Colors.white70),
+                label: const Text('Google Play', style: TextStyle(color: Colors.white70)),
+              ),
             ],
           ),
         ],

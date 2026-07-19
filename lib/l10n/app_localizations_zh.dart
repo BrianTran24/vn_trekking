@@ -70,4 +70,10 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get joinNow => '立即加入';
+
+  @override
+  String get downloadAppStore => '在 App Store 下载';
+
+  @override
+  String get downloadPlayStore => '在 Google Play 获取';
 }
